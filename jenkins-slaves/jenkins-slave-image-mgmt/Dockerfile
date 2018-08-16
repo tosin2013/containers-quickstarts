@@ -16,8 +16,8 @@ RUN yum repolist > /dev/null && \
     yum-config-manager --disable \* > /dev/null && \
     yum-config-manager --enable rhel-7-server-rpms && \
     yum-config-manager --enable rhel-7-server-extras-rpms  && \
-    yum-config-manager --enable rhel-7-server-optional-rpms \
-    yum-config-manager --enable rhel-7-server-ose-3.0-rpms \
+    yum-config-manager --enable rhel-7-server-optional-rpms && \
+    yum-config-manager --enable rhel-7-server-ose-3.0-rpms && \
     INSTALL_PKGS="skopeo" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
