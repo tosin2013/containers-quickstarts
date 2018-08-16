@@ -12,11 +12,17 @@ USER root
 
 RUN yum repolist > /dev/null && \
     yum clean all && \
+    yum repolist --disablerepo=* && \
+    yum-config-manager --disable \* > /dev/null && \
+    yum-config-manager --enable rhel-7-server-rpms && \
+    yum-config-manager --enable rhel-7-server-extras-rpms  && \
+    yum-config-manager --enable rhel-7-server-optional-rpms \
+    yum-config-manager --enable rhel-7-server-ose-3.0-rpms \
     INSTALL_PKGS="skopeo" && \
-    yum install -y --enablerepo=rhel-7-server-extras-rpms --setopt=tsflags=nodocs $INSTALL_PKGS && \
+    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     INSTALL_PKGS="openshift-clients" && \
-    yum install -y --enablerepo=rhel-7-server-ose-3.0-rpms --setopt=tsflags=nodocs $INSTALL_PKGS && \
+    yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all
 
