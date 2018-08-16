@@ -15,6 +15,9 @@ RUN yum repolist > /dev/null && \
     INSTALL_PKGS="skopeo" && \
     yum install -y --enablerepo=rhel-7-server-extras-rpms --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
+    INSTALL_PKGS="openshift-clients" && \
+    yum install -y --enablerepo=rhel-7-server-ose-3.0-rpms --setopt=tsflags=nodocs $INSTALL_PKGS && \
+    rpm -V $INSTALL_PKGS && \
     yum clean all
 
 USER 1001
