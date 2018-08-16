@@ -23,7 +23,6 @@ RUN yum repolist > /dev/null && \
     rpm -V $INSTALL_PKGS && \
     INSTALL_PKGS="openshift-clients" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
-    rpm -V $INSTALL_PKGS && \
     yum clean all
 
 USER 1001
