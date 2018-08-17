@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7
 MAINTAINER Andrew Block <ablock@redhat.com>
 
 LABEL com.redhat.component="jenkins-slave-image-mgmt" \
-      name="jenkins-slave-image-mgmt" \
+      name="skopeojenkinsslave" \
       architecture="x86_64" \
       io.k8s.display-name="Jenkins Slave Image Management" \
       io.k8s.description="Image management tools on top of the jenkins slave base image" \
