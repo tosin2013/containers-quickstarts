@@ -21,7 +21,7 @@ RUN yum repolist > /dev/null && \
     INSTALL_PKGS="skopeo" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
-    INSTALL_PKGS="openshift-clients" && \
+    INSTALL_PKGS="atomic-openshift-clients" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     yum clean all
 
