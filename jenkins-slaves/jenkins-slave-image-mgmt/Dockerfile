@@ -19,11 +19,12 @@ RUN yum repolist > /dev/null && \
     yum-config-manager --enable rhel-7-server-optional-rpms && \
     yum-config-manager --enable rhel-7-server-ose-3.9-rpms && \
     INSTALL_PKGS="skopeo" && \
-    INSTALL_PKGS="sshpass" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     INSTALL_PKGS="atomic-openshift-clients" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     yum clean all
+
+RUN yum install sshpass -y
 
 USER 1001
