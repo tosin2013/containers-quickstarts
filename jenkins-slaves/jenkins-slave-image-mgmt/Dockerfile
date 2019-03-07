@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7
 
-MAINTAINER Andrew Block <ablock@redhat.com>
+MAINTAINER Manny Evangelista <man@redhat.com>
 
 LABEL com.redhat.component="jenkins-slave-image-mgmt" \
       name="skopeojenkinsslave" \
@@ -19,6 +19,7 @@ RUN yum repolist > /dev/null && \
     yum-config-manager --enable rhel-7-server-optional-rpms && \
     yum-config-manager --enable rhel-7-server-ose-3.9-rpms && \
     INSTALL_PKGS="skopeo" && \
+    INSTALL_PKGS="sshpass" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     INSTALL_PKGS="atomic-openshift-clients" && \
