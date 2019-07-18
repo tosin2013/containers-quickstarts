@@ -11,10 +11,6 @@ LABEL com.redhat.component="jenkins-slave-image-mgmt" \
 USER root
 
 RUN set -x && \
-    subscription-manager refresh && \
-    subscription-manager register --username $RHEL_USERNAME --password $RHEL_PASSWORD --auto-attach && \
-    yum repolist > /dev/null && \
-    yum clean all && \
     yum repolist --disablerepo=* && \
     yum-config-manager --disable \* > /dev/null && \
     yum-config-manager --enable rhel-7-server-rpms && \
