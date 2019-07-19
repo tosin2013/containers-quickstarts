@@ -1,5 +1,4 @@
-FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7
-
+FROM docker-registry.default.svc:5000/cicd-user1/custom-jenkins-slave-maven-rhel7
 MAINTAINER Manny Evangelista <man@redhat.com>
 
 LABEL com.redhat.component="jenkins-slave-image-mgmt" \
