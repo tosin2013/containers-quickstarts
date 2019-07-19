@@ -1,4 +1,4 @@
-FROM docker-registry.default.svc:5000/cicd-user1/custom-jenkins-slave-maven-rhel7
+FROM registry.redhat.io/ubi7/ubi-minimal
 MAINTAINER Manny Evangelista <man@redhat.com>
 
 LABEL com.redhat.component="jenkins-slave-image-mgmt" \
