@@ -10,7 +10,7 @@ LABEL com.redhat.component="jenkins-slave-image-mgmt" \
 USER root
 
 RUN set -x && \
-    yum install skopeo -y
+    yum install skopeo maven -y
 
 RUN curl -sLo /tmp/oc.tar.gz https://mirror.openshift.com/pub/openshift-v3/clients/3.11.104/linux/oc.tar.gz && \
 tar -xzvf /tmp/oc.tar.gz -C /tmp/ && \
